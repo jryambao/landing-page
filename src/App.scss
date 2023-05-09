@@ -1,0 +1,78 @@
+// FONT FAMILY
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;1,100;1,200;1,300;1,400;1,500&display=swap');
+// Variables
+
+// Fonts
+$font-family-default: "Mulish", sans-serif;
+$font-family-title: "Lora", serif;
+$font-family-subtitle: 'Montserrat', sans-serif;
+$font-size-default: 16px;
+$font-size-title: 18px;
+$primary-text-color: #191919;
+// Colors
+$secondary: #6c757d;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: #e2e3e4;
+$dark: #191919;
+
+// HERO SLIDER
+.carousel {
+  height: 800px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+
+  &::before{
+
+    content: '';
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.2);
+    z-index: 1;
+  }
+
+  .carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+
+    &.active {
+      opacity: 1;
+    }
+
+    .carousel-item-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      text-align: center;
+      z-index: 99;
+
+      h2 {
+        font-size: clamp(60px, 7.938vw, 100px);
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        text-shadow: 1px 2px 2px #000;
+        font-family: $font-family-title;
+      }
+
+      p {
+        font-size: clamp(16px, 1.250vw, 20px);
+        letter-spacing: 0.03em;
+        font-family: $font-family-subtitle;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
