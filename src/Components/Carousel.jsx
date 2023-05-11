@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import '../App.scss'
+import '../Style/Main.scss'
 
 const images = [
   { src: 'img/slide-3.jpg'},
@@ -12,26 +12,27 @@ const Carousel = () => {
   useEffect(() => {
     const intervalId = setInterval(() => {
       setCurrentIndex((currentIndex + 1) % images.length);
-    }, 10000);
+    }, 5000);
 
     return () => clearInterval(intervalId);
   }, [currentIndex]);
 
   return (
-    <div className="carousel">
+    <section className="carouselSlider">
+      <div className="carousel">
       {images.map((image, index) => (
         <div
           key={image.src}
           className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
-          style={{ backgroundImage: `url(${image.src})` }}
-        >
+          style={{ backgroundImage: `url(${image.src})` }}>
           <div className="carousel-item-content">
             <h2>Phil Dunphy</h2>
             <p>Not just another realtor, a man who cares!</p>
           </div>
         </div>
       ))}
-    </div>
+      </div>
+    </section>
   );
 };
 

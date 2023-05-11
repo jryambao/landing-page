@@ -1,5 +1,7 @@
 import React from 'react';
-import Carousel from './homepage/carousel.jsx';
+import Carousel from './Components/Carousel.jsx';
+import Navbar from './Components/Navbar.jsx';
+import Mainpage from './Components/Mainpage.jsx'
 import './App.scss';
 
 const images = [{
@@ -21,11 +23,10 @@ const images = [{
 
 const App = () => {
   return ( 
-    <div className = "app" >
-    <Carousel images = {images}
-      title = "Hello World"
-      subtitle = "Fuck"
-    /> 
+    <div className = "mainWrapper" >
+    <Navbar/>
+    <Carousel images = {images}/> 
+    <Mainpage/>
     </div>
   );
 };
