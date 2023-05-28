@@ -25,13 +25,19 @@ const Carousel = () => {
           key={image.src}
           className={`carousel-item ${index === currentIndex ? 'active' : ''}`}
           style={{ backgroundImage: `url(${image.src})` }}>
-          <div className="carousel-item-content">
+          
+          
+        </div>
+      ))}
+      <div className="carousel-item-content">
             <h2>Phil Dunphy</h2>
             <p>Not just another realtor, a man who cares!</p>
           </div>
-        </div>
-      ))}
+          <div className="carousel-quote">
+            <p>20 Years of Selling Homes Locally</p>
+          </div>
       </div>
+      
     </section>
   );
 };

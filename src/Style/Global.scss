@@ -43,10 +43,10 @@
     font-size: 12px;
     color: $dark;
     position: relative;
-    transition: all 1s ease-in-out;
+    transition: all .1s ease-in-out;
 
     &:hover{
-        color: $light;
+        color: #fff;
     }
 
     &::before {
@@ -58,24 +58,14 @@
       height: 100%;
       top: 0;
       transition: all 0.2s ease-in-out;
+      z-index: -1;
     }
     &:hover::before{
-        animation: anibtn .2s linear;
+        width: 100%;
     }
   }
 }
 
-@keyframes anibtn {
-  20% {
-    width: 30%;
-  }
-  50% {
-    width: 60%;
-  }
-  100% {
-    width: 100%;
-  }
-}
 
 // NAVIGATION BAR
 
@@ -87,12 +77,14 @@ header {
   top: 0;
   left: 0;
   right: 0;
-  padding: 30px 25px;
+  padding-top: 30px;
 
   .container {
     display: flex;
     align-items: center;
-    max-width: 1600px;
+    width: clamp(767px, 93.750vw, 1500px);
+    margin: 0 auto;
+    justify-content: space-between;
 
     .logo {
       img {
@@ -118,6 +110,22 @@ header {
           font-family: $font-nav;
           font-weight: 600;
           text-shadow: 1px 2px 2px #000;
+          position: relative;
+
+          &:hover::before{
+            width: 100%;
+          }
+
+          &::before{
+            width: 0%;
+            position: absolute;
+            bottom: -15%;
+            left: 0;
+            background-color: $primary;
+            height: 3px;
+            content: '';
+            transition: 0.2s ease-in;
+          }
         }
       }
     }
