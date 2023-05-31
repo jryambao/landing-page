@@ -16,6 +16,12 @@ import hc8 from '../assets/hc8.jpg'
 import hc9 from '../assets/hc9.jpg'
 
 
+import fv1 from '../assets/fv1.jpg'
+import fv2 from '../assets/fv2.jpg'
+import fv3 from '../assets/fv3.jpg'
+import fv4 from '../assets/fv4.jpg'
+
+
 
 
 
@@ -132,4 +138,27 @@ const communities = [
     
 ]
 
-export {listing, Testi, communities};
+const video = [
+        {
+                
+                link:"https://youtu.be/dQw4w9WgXcQ",
+                imageName: fv1
+        },
+
+        {
+                link:"https://youtu.be/dQw4w9WgXcQ",    
+                imageName: fv2
+        },
+
+        {
+                link:"https://youtu.be/dQw4w9WgXcQ",
+                imageName: fv3        
+        },
+
+        {
+                link:"https://youtu.be/dQw4w9WgXcQ",
+                imageName: fv4        
+        }
+]
+
+export {listing, Testi, communities, video};

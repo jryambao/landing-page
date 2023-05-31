@@ -2,6 +2,7 @@ import React from 'react';
 import Carousel from './Components/Carousel.jsx';
 import Navbar from './Components/Navbar.jsx';
 import Mainpage from './Components/Mainpage.jsx'
+import Footer from './Components/Footer.jsx'
 import './App.scss';
 
 const images = [{
@@ -27,6 +28,7 @@ const App = () => {
     <Navbar/>
     <Carousel images = {images}/> 
     <Mainpage/>
+    <Footer/>
     </div>
   );
 };

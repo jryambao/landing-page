@@ -3,9 +3,9 @@ import '../Style/Main.scss';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css"
-import {listing , Testi, communities} from '../Components/Listings.jsx'
+import {listing , Testi, communities, video} from '../Components/Listings.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowLeft, faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowLeft, faArrowRight, faPlay } from '@fortawesome/free-solid-svg-icons';
 
 
 // PHIL NUMBERS
@@ -321,6 +321,100 @@ const Community = () =>{
   );
 }
 
+const VideoCard = ({imageName, link}) =>{
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const handlePopupOpen = (event) => {
+    event.preventDefault();
+    setIsPopupOpen(true);
+  };
+ return(
+  <>
+    <a href={link} className="hpv-card" onClick={handlePopupOpen}>
+      <div className="fv-img">
+        <img src={imageName} alt="Videos"/>
+      </div>
+      <div className="play-btn">
+        <FontAwesomeIcon icon={faPlay} />
+      </div>
+        
+      </a>
+       {isPopupOpen && (
+        <div className="popup">
+          {/* Render the video popup here */}
+          <iframe width="1280" height="720" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          <button onClick={() => setIsPopupOpen(false)}>Close</button>
+        </div> )}
+  </>
+    
+  );
+
+
+}
+
+const Fvideo = () =>{
+  const sliderRef = useRef(null);
+
+  const settings = {
+      dots: false, // Enable navigation dots
+      arrows: false, // Show navigation arrows
+      prevArrow: <FvPrevArrow />,
+      nextArrow: <FvNextArrow />,
+      centerMode: true,
+      autoplay: false,
+      infinite: true, // Disable infinite loop
+      speed: 1000, // Transition speed in milliseconds
+      slidesToShow: 3, // Number of slides to show at a time
+      slidesToScroll: 1, // Number of slides to scroll per swipe
+  };
+
+  const handlePrev = () => {
+    sliderRef.current.slickPrev();
+  };
+
+  const handleNext = () => {
+    sliderRef.current.slickNext();
+  };
+
+  return (
+    <div className="hp-video">
+        <div className="container">
+          <div className="hpv-title">
+            <h3>Featured</h3>
+            <h2>Videos</h2>
+            <div className="global-btn">
+            <a href="#">View All</a>
+            </div>
+          </div>
+        <div className="fv-list">
+        <FvPrevArrow onClick={handlePrev} />
+          <Slider ref={sliderRef} {...settings}>
+          {video.map((video, index) => (
+            <VideoCard key={index} {...video} />
+          ))}
+        </Slider>
+         <FvNextArrow onClick={handleNext} />
+        </div>
+      </div>
+    </div>
+  );
+}
+  const FvPrevArrow = ({ onClick }) => (
+  <button onClick={onClick} className="custom-prev-arrow">
+    <FontAwesomeIcon icon={faArrowLeft} />
+    Prev
+  </button>
+);
+
+const FvNextArrow = ({ onClick }) => (
+  <button onClick={onClick} className="custom-next-arrow">
+    Next
+    <FontAwesomeIcon icon={faArrowRight} />
+  </button>
+);
+
+
+
 
 function Mainpage() {
   const counterRef = useRef(null);
@@ -365,7 +459,7 @@ function Mainpage() {
       <Carousel/>
       <TsCarousel/>
       <Community/>
-
+      <Fvideo/>
       
     </section>
   );
