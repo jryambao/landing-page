@@ -164,13 +164,7 @@ const Carousel = () => {
     nextArrow: <FlNextArrow />,
     responsive: [
       {
-        breakpoint: 768, // Responsive breakpoint
-        settings: {
-          slidesToShow: 2, // Number of slides to show at this breakpoint
-        },
-      },
-      {
-        breakpoint: 480, // Responsive breakpoint
+        breakpoint: 992, // Responsive breakpoint
         settings: {
           slidesToShow: 1, // Number of slides to show at this breakpoint
         },
@@ -268,21 +262,37 @@ const TsCarousel = () =>{
           ))}
         </Slider>
 
-        <div class="ts-btn global-btn" data-aos-duration="1000" data-aos="fade-in" data-aos-reveal="true" data-aos-once="true">
+        
+        </div>
+       
+      </div>
+       <div class="ts-btn global-btn" data-aos-duration="1000" data-aos="fade-in" data-aos-reveal="true" data-aos-once="true">
             <TsPrevArrow onClick={handlePrev} />
           <a href="#">View More</a>
 
             <TsNextArrow onClick={handleNext} />
         </div>
-        </div>
-      </div>
     </div>
   );
 }
 
 // COMMUNITIES
 
-const CommunityCard = ({title, imageName}) =>{
+const CommunityCard = ({title, imageName, href, children}) =>{
+    const [tapCount, setTapCount] = useState(0);
+
+      const handleLinkClick = (e) => {
+    if (tapCount === 0 && window.innerWidth <= 991) {
+      e.preventDefault();
+      setTapCount(1);
+    }
+  };
+  const handleLinkHover = () => {
+    if (tapCount === 0 && window.innerWidth <= 991) {
+      setTapCount(1);
+    }
+  };
+
   return(
   <a href='#' className="fc-card">
     <div className="fc-img">
@@ -322,15 +332,10 @@ const Community = () =>{
 }
 
 const VideoCard = ({imageName, link}) =>{
-  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const handlePopupOpen = (event) => {
-    event.preventDefault();
-    setIsPopupOpen(true);
-  };
  return(
   <>
-    <a href={link} className="hpv-card" onClick={handlePopupOpen}>
+    <a target='blank' href={link} className="hpv-card">
       <div className="fv-img">
         <img src={imageName} alt="Videos"/>
       </div>
@@ -339,12 +344,7 @@ const VideoCard = ({imageName, link}) =>{
       </div>
         
       </a>
-       {isPopupOpen && (
-        <div className="popup">
-          {/* Render the video popup here */}
-          <iframe width="1280" height="720" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Rick Astley - Never Gonna Give You Up (Official Music Video)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          <button onClick={() => setIsPopupOpen(false)}>Close</button>
-        </div> )}
+      
   </>
     
   );
@@ -356,17 +356,27 @@ const Fvideo = () =>{
   const sliderRef = useRef(null);
 
   const settings = {
-      dots: false, // Enable navigation dots
-      arrows: false, // Show navigation arrows
-      prevArrow: <FvPrevArrow />,
-      nextArrow: <FvNextArrow />,
-      centerMode: true,
-      autoplay: false,
-      infinite: true, // Disable infinite loop
-      speed: 1000, // Transition speed in milliseconds
-      slidesToShow: 3, // Number of slides to show at a time
-      slidesToScroll: 1, // Number of slides to scroll per swipe
-  };
+  dots: false,
+  arrows: false,
+  prevArrow: <FvPrevArrow />,
+  nextArrow: <FvNextArrow />,
+  centerMode: true,
+  autoplay: false,
+  infinite: true,
+  speed: 1000,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  responsive: [
+    {
+      breakpoint: 992, // screen size at which this configuration will be applied
+      settings: {
+        slidesToShow: 1,
+        centerMode: false,
+      },
+    },
+    
+  ],
+};
 
   const handlePrev = () => {
     sliderRef.current.slickPrev();

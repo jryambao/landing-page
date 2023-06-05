@@ -13,6 +13,8 @@ $font-family-subtitle: 'Montserrat', sans-serif;
 $font-size-default: 16px;
 $font-size-title: 18px;
 $primary-text-color: #191919;
+$font-size-title: clamp(65px, 5vw, 80px);
+$font-size-subtitle: clamp(18px, 1.2vw, 20px);
 // Colors
 $primary: #C52B2A;
 $secondary: #6c757d;
@@ -22,3 +24,50 @@ $warning: #ffc107;
 $danger: #dc3545;
 $light: #e2e3e4;
 $dark: #191919;
+
+// BREAKPOINTS
+
+$breakpoints: (
+"xs": 320px,
+"sm": 480px,
+"md": 767px,
+"lg":991px,
+"xl": 1199px
+);
+
+
+@mixin xs{
+    @media (max-width: map-get($breakpoints, "xs")){
+        @content;
+    }
+}
+
+@mixin sm{
+    @media (max-width: map-get($breakpoints, "sm")){
+        @content;
+    }
+}
+
+@mixin md{
+    @media (max-width: map-get($breakpoints, "md")){
+        @content;
+    }
+}
+
+@mixin lg{
+    @media (max-width: map-get($breakpoints, "lg")){
+        @content;
+    }
+}
+
+@mixin xs{
+    @media (max-width: map-get($breakpoints, "xs")){
+        @content;
+    }
+}
+
+@mixin xl{
+    @media (max-width: map-get($breakpoints, "xl")){
+        @content;
+    }
+}

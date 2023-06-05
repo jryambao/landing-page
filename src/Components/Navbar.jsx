@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import '../Style/Main.scss';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+
 
 function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
@@ -34,11 +37,36 @@ function Navbar() {
           </a>
         </div>
         <div className={`mobile-menu ${isMobileMenuVisible ? 'active' : ''}`}>
-          <div className="burger-icon" onClick={handleMobileMenuToggle}>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
+        <div className="header-nav">
+         <button className="burger-icon" onClick={handleMobileMenuToggle}>
+              <span>
+                <em></em>
+                <em></em>
+                <em></em>
+              </span>
+            </button>
+        <a href="tel:1+999.999.999">
+          <FontAwesomeIcon icon={faPhone} />
+        </a>
+           
+        <a href="mailto:johnralph266@gmail.com">
+            <FontAwesomeIcon icon={faEnvelope} />
+        </a>
+
+        </div>
+        <div className="sidemenu">
+         <button className="sideburger" onClick={handleMobileMenuToggle}>
+              <span>
+                <em></em>
+                <em></em>
+                <em></em>
+              </span>
+            </button>
+          <div className="mobile-logo">
+          <a href="#">
+            <img src="img/phil-logo.png" alt="Header Logo" width="150" />
+          </a>
+        </div>
           <ul className="mobile-nav">
             <li>
               <a href="#">Home</a>
@@ -64,6 +92,8 @@ function Navbar() {
               <a href="#">Contact</a>
             </li>
           </ul>
+        </div>
+  
         </div>
         <ul className="desktop-nav">
           <li>
