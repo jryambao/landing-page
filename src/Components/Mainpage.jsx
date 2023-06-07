@@ -278,20 +278,7 @@ const TsCarousel = () =>{
 
 // COMMUNITIES
 
-const CommunityCard = ({title, imageName, href, children}) =>{
-    const [tapCount, setTapCount] = useState(0);
-
-      const handleLinkClick = (e) => {
-    if (tapCount === 0 && window.innerWidth <= 991) {
-      e.preventDefault();
-      setTapCount(1);
-    }
-  };
-  const handleLinkHover = () => {
-    if (tapCount === 0 && window.innerWidth <= 991) {
-      setTapCount(1);
-    }
-  };
+const CommunityCard = ({title, imageName}) =>{
 
   return(
   <a href='#' className="fc-card">
@@ -389,7 +376,7 @@ const Fvideo = () =>{
   return (
     <div className="hp-video">
         <div className="container">
-          <div className="hpv-title">
+          <div className="section-title">
             <h3>Featured</h3>
             <h2>Videos</h2>
             <div className="global-btn">

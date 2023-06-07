@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from './Components/Carousel.jsx';
-import Navbar from './Components/Navbar.jsx';
+import Navbar from './Components/Navbar1.jsx';
 import Mainpage from './Components/Mainpage.jsx'
 import Footer from './Components/Footer.jsx'
 import './App.scss';

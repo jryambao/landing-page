@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import '../Style/Main.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
-
+import { faPhone, faEnvelope, faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
+import { FaBars, FaTimes } from "react-icons/fa";
 
 function Navbar() {
   const [isSticky, setIsSticky] = useState(false);
@@ -39,11 +39,7 @@ function Navbar() {
         <div className={`mobile-menu ${isMobileMenuVisible ? 'active' : ''}`}>
         <div className="header-nav">
          <button className="burger-icon" onClick={handleMobileMenuToggle}>
-              <span>
-                <em></em>
-                <em></em>
-                <em></em>
-              </span>
+              <FontAwesomeIcon icon={faBars} />
             </button>
         <a href="tel:1+999.999.999">
           <FontAwesomeIcon icon={faPhone} />
@@ -56,11 +52,7 @@ function Navbar() {
         </div>
         <div className="sidemenu">
          <button className="sideburger" onClick={handleMobileMenuToggle}>
-              <span>
-                <em></em>
-                <em></em>
-                <em></em>
-              </span>
+              <FontAwesomeIcon icon={faXmark} />
             </button>
           <div className="mobile-logo">
           <a href="#">
@@ -126,3 +118,4 @@ function Navbar() {
 }
 
 export default Navbar;
+
