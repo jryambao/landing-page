@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import '../Style/Main.scss'
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const images = [
   { src: 'img/slide-3.jpg'},
@@ -7,6 +9,10 @@ const images = [
 ];
 
 const Carousel = () => {
+  useEffect(() => {
+    AOS.init(); // Initialize AOS library
+  }, []);
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -30,10 +36,13 @@ const Carousel = () => {
         </div>
       ))}
       <div className="carousel-item-content">
-            <h2>Phil Dunphy</h2>
+            <div data-aos-once="true" data-aos="fade-down" data-aos-duration="1000">
+               <h2>Phil Dunphy</h2>
             <p>Not just another realtor, a man who cares!</p>
+            </div>
+           
           </div>
-          <div className="carousel-quote">
+          <div data-aos-once="true" data-aos="fade-right" data-aos-duration="1000" className="carousel-quote">
             <p>20 Years of Selling Homes Locally</p>
           </div>
       </div>

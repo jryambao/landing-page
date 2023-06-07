@@ -6,6 +6,8 @@ import "slick-carousel/slick/slick-theme.css"
 import {listing , Testi, communities, video} from '../Components/Listings.jsx'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faArrowLeft, faArrowRight, faPlay } from '@fortawesome/free-solid-svg-icons';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 
 // PHIL NUMBERS
@@ -69,12 +71,12 @@ const NumberCounter = ({ counterRef }) => {
 
   return (
     <div className="hp-pp" ref={counterRef}>
-      <div className="section-title">
+      <div data-aos-once="true" data-aos="fade-up" data-aos-duration="1000" className="section-title">
         <h3>Phil's Numbers</h3>
         <h2>Why Work With Him</h2>
       </div>
       <div className="container">
-      <div className="track-body">
+      <div data-aos-once="true" data-aos="fade-left" data-aos-duration="1000" className="track-body">
         <div className="track-stats">
           <h3 className="counter" data-target={690}>
             0
@@ -106,9 +108,11 @@ const NumberCounter = ({ counterRef }) => {
 };
 
 
+
+
 // LISTINGS CARD
 const Listing = ({ title, price, description, imageName, centerTitle }) => (
-  <div className="list-item">
+  <div data-aos-once="true" data-aos="flip-left" data-aos-duration="1000" className="list-item">
     <a href="#" className="list-card">
       <div className="list-img">
         <img src={imageName} alt="Listing Image" />
@@ -174,7 +178,7 @@ const Carousel = () => {
    return (
     <div className="hp-listing">
       <div className="container">
-        <div className="section-title">
+        <div data-aos-once="true" data-aos="fade-up" data-aos-duration="1000" className="section-title">
           <h3>Featured</h3>
           <h2>Listings</h2>
         </div>
@@ -250,11 +254,11 @@ const TsCarousel = () =>{
 
   return (
     <div className="hp-testimonial">
-    <div className="section-title">
+    <div data-aos-once="true" data-aos="fade-up" data-aos-duration="1000" className="section-title">
           <h3>What They Say</h3>
           <h2>Testimonials</h2>
         </div>
-      <div className="container">
+      <div data-aos-delay="300" data-aos-once="true" data-aos="zoom-in" data-aos-duration="1500" className="container">
         <div className="ts-list">
           <Slider ref={sliderRef} {...settings}>
           {Testi.map((Testi, index) => (
@@ -278,45 +282,51 @@ const TsCarousel = () =>{
 
 // COMMUNITIES
 
-const CommunityCard = ({title, imageName}) =>{
-
-  return(
-  <a href='#' className="fc-card">
-    <div className="fc-img">
-      <img src={imageName} alt="Community Name"/>
-    </div>
-    <div className="fc-title">
-      <h3>{title}</h3>
-      <h4>Los Angeles</h4>
-    </div>
-  </a>
+const CommunityCard = ({ title, imageName, delay }) => {
+  return (
+    <a
+      data-aos-once="true"
+      data-aos="flip-right"
+      data-aos-duration="1000"
+      data-aos-delay={delay}
+      href="#"
+      className="fc-card"
+    >
+      <div className="fc-img">
+        <img src={imageName} alt="Community Name" />
+      </div>
+      <div className="fc-title">
+        <h3>{title}</h3>
+        <h4>Los Angeles</h4>
+      </div>
+    </a>
   );
-}
+};
 
-const Community = () =>{
-  return(
+const Community = () => {
+  return (
     <div className="hp-community">
       <div className="container">
         <div className="fc-list">
-         <div className="hpc-title">
-          <h3>Featured</h3>
-          <h2>Communities</h2>
-          <div className="global-btn">
-            <a href="#">View All</a>
+          <div className="hpc-title">
+            <h3>Featured</h3>
+            <h2>Communities</h2>
+            <div className="global-btn">
+              <a href="#">View All</a>
+            </div>
           </div>
-          
-        </div>
-          {communities.map((communities, index) => (
-            <CommunityCard key={index} {...communities} />
+          {communities.map((community, index) => (
+            <CommunityCard
+              key={index}
+              {...community}
+            />
           ))}
         </div>
-        
-   
       </div>
-        
-      </div>
+    </div>
   );
-}
+};
+
 
 const VideoCard = ({imageName, link}) =>{
 
@@ -416,14 +426,19 @@ const FvNextArrow = ({ onClick }) => (
 function Mainpage() {
   const counterRef = useRef(null);
 
+  useEffect(() => {
+    AOS.init(); // Initialize AOS library
+  }, []);
+
+
   return (
     <section id="main-body">
       <div id="hp-about">
         <div className="container">
-          <div className="agent">
+          <div data-aos-once="true" data-aos="zoom-in-right" data-aos-duration="1000" className="agent">
             <img src="img/agent1.jpg" alt="Phil Dunphy" />
           </div>
-          <div className="about-body">
+          <div data-aos-once="true" data-aos="zoom-in" data-aos-duration="1000" className="about-body">
             <div className="section-title">
               <h3>Meet</h3>
               <h2>Phil Dunphy</h2>

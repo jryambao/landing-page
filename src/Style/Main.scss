@@ -302,9 +302,13 @@
   padding: 40px 60px;
 
   .container {
-    width: 1199px;
+    width: 1400px;
     padding: 0 15px;
     margin: 0 auto;
+
+    @include xxl{
+      width: 100%;
+    }
 
     @include xl{
       width: 920px;
@@ -386,8 +390,9 @@
   }
 
   .global-btn {
-    text-align: center;
     margin: 30px 0;
+    display: flex;
+    justify-content: center;
   }
 
   .list-item {
@@ -1180,7 +1185,10 @@
           li {
             padding: 0 40px;
             list-style: none;
-            border-right: 1px solid #cccccc;
+
+            &:not(:last-child){
+              border-right: 1px solid #cccccc;
+            }            
 
             @include lg {
               border-right: unset;

@@ -105,34 +105,42 @@ const Testi = [
 const communities = [
         {
         title: 'Hollywood',
-        imageName: hc1
+        imageName: hc1,
+        delay: 200,
         },
          {
         title: 'Santa Monica',
+        delay: 400,
         imageName: hc2
         },
          {
         title: 'Beverly Hills',
+        delay: 600,
         imageName: hc3
         },
          {
         title: 'Silver Lake',
+        delay: 800,
         imageName: hc4
         },
          {
         title: 'Venice Beach',
+        delay: 1000,
         imageName: hc5
         },
          {
         title: 'Koreatown',
+        delay: 1200,
         imageName: hc6
         },
          {
         title: 'Westwood',
+        delay: 1400,
         imageName: hc7
         },
          {
         title: 'Echo Park',
+        delay: 1600,
         imageName: hc8
         }
     
