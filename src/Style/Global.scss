@@ -169,6 +169,24 @@ header {
       font-family: $font-family-subtitle;
       color: #fff;
       text-shadow: 1px 2px 2px #000;
+      position: relative;
+      display: inline-block;
+
+      &::before{
+        width: 0;
+        height: 2px;
+        background-color: #fff;
+        position: absolute;
+        bottom: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: 0.3s ease;
+        transform-origin: center;
+        content: '';
+      }
+      &:hover::before{
+        width: 100%;
+      }
     }
   }
   .nav__toggler {
@@ -255,6 +273,19 @@ li {
 a {
   text-decoration: none;
 }
-#mainWrapper{
+.mainWrapper{
   overflow: hidden;
+}
+
+.safari-true{
+  .hp-pp{
+    &::after {
+      background-attachment: scroll;
+    }
+  }
+  .hp-contact{
+    &::after {
+      background-attachment: scroll;
+    }
+  }
 }
