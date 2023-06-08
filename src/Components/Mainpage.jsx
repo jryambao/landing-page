@@ -115,7 +115,7 @@ const Listing = ({ title, price, description, imageName, centerTitle }) => (
   <div data-aos-once="true" data-aos="flip-left" data-aos-duration="1000" className="list-item">
     <a href="#" className="list-card">
       <div className="list-img">
-        <img src={imageName} alt="Listing Image" />
+        <img src={imageName} alt="Listing Image" loading="lazy" />
       </div>
       <div className="center-info">
         <h3>{title}</h3>
@@ -293,7 +293,7 @@ const CommunityCard = ({ title, imageName, delay }) => {
       className="fc-card"
     >
       <div className="fc-img">
-        <img src={imageName} alt="Community Name" />
+        <img src={imageName} alt="Community Name" loading="lazy" />
       </div>
       <div className="fc-title">
         <h3>{title}</h3>
@@ -334,7 +334,7 @@ const VideoCard = ({imageName, link}) =>{
   <>
     <a target='blank' href={link} className="hpv-card">
       <div className="fv-img">
-        <img src={imageName} alt="Videos"/>
+        <img src={imageName} alt="Videos" loading="lazy"/>
       </div>
       <div className="play-btn">
         <FontAwesomeIcon icon={faPlay} />
@@ -436,7 +436,7 @@ function Mainpage() {
       <div id="hp-about">
         <div className="container">
           <div data-aos-once="true" data-aos="zoom-in-right" data-aos-duration="1000" className="agent">
-            <img src="img/agent1.jpg" alt="Phil Dunphy" />
+            <img src="img/agent1.jpg" alt="Phil Dunphy" loading="lazy" />
           </div>
           <div data-aos-once="true" data-aos="zoom-in" data-aos-duration="1000" className="about-body">
             <div className="section-title">
