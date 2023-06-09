@@ -200,6 +200,13 @@
           line-height: 1.6;
           max-width: 660px;
           font-family: $section-subtitle;
+
+          @include md{
+            max-width: 420px;
+          }
+          @include xs{
+            max-width: 300px;
+          }
         }
       }
     }
@@ -341,6 +348,11 @@
       font-size: 12px;
       position: relative;
       cursor: pointer;
+      transition: 0.2s ease-in;
+
+      &:hover{
+        color: $primary;
+      }
 
       svg {
         font-size: 17px;
@@ -350,6 +362,10 @@
     a {
       margin: 0 50px;
       position: relative;
+
+      &:hover{
+        background-color: $primary;
+      }
 
       &::before {
         position: absolute;
@@ -476,6 +492,10 @@
       font-weight: 400;
       // text-shadow: 1px 2px 2px #000;
 
+      @include lg{
+
+      }
+
       h3 {
         position: relative;
 
@@ -497,7 +517,7 @@
       align-items: center;
       top: auto;
       bottom: 0;
-      padding: 1em;
+      padding: 1em .2em;
       height: 60px;
       background: $primary;
       color: #fff;
@@ -630,6 +650,10 @@
       margin: 0 50px;
       position: relative;
 
+      &:hover{
+        background-color: $primary;
+      }
+
       &::before {
         position: absolute;
         content: "";
@@ -663,6 +687,11 @@
       font-size: 12px;
       position: relative;
       cursor: pointer;
+      transition: 0.2s ease-in;
+
+      &:hover{
+        color: $primary;
+      }
 
       svg {
         font-size: 17px;
@@ -825,6 +854,10 @@
     position: relative;
     z-index: 2;
     padding: unset !important;
+
+    @include lg{
+      width: 70% !important;
+    }
   }
 
   .section-title {
@@ -850,10 +883,18 @@
       &.custom-prev-arrow {
         top: 50%;
         left: 3%;
+
+        @include lg{
+          left: -20%;
+        }
       }
       &.custom-next-arrow {
         top: 50%;
         right: 3%;
+
+        @include lg{
+          right: -20%;
+        }
       }
       svg {
         font-size: 17px;
@@ -1188,10 +1229,12 @@
         ul {
           display: flex;
           justify-content: center;
+          padding-left: unset !important;
 
           @include lg {
             flex-direction: column;
             align-items: center;
+            
           }
 
           li {
@@ -1203,7 +1246,7 @@
             }            
 
             @include lg {
-              border-right: unset;
+              border-right: unset !important;
               padding: 10px 0;
             }
             a {
@@ -1216,6 +1259,11 @@
               color: #fff;
               text-shadow: 1px 2px 2px #000;
               font-weight: 600;
+              transition: 0.2s ease;
+
+              &:hover{
+                opacity: 0.8;
+              }
             }
           }
         }
@@ -1231,6 +1279,11 @@
           font-family: $font-family-default;
           font-weight: 400;
         }
+      }
+
+      svg{
+        color: #fff;
+        font-size: 18px;
       }
     }
   }
