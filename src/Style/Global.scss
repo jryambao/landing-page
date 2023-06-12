@@ -52,6 +52,7 @@
     color: $dark;
     position: relative;
     transition: all 0.1s ease-in-out;
+    white-space: nowrap;
 
     &:hover {
       color: #fff;

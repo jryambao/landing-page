@@ -50,6 +50,10 @@
       text-shadow: 1px 2px 2px #000;
       font-family: $font-family-title;
       white-space: nowrap;
+
+      @include lg{
+        font-size: clamp(40px, 8.073vw, 80px);
+      }
     }
 
     p {
@@ -57,6 +61,10 @@
       letter-spacing: 0.03em;
       font-family: $font-family-subtitle;
       text-transform: uppercase;
+
+      @include lg{
+        font-size: clamp(13px, 2.018vw, 20px);
+      }
     }
   }
 }
@@ -74,6 +82,11 @@
     color: #fff;
     font-weight: 700;
     position: relative;
+
+    @include lg{
+    font-size: calc(14px + (26 - 14) * ((100vw - 320px) / (1600 - 320)));
+
+    }
 
     &::before {
       position: absolute;
@@ -139,6 +152,9 @@
       @include lg {
         width: 50%;
       }
+      @include md{
+        width: 70%;
+      }
 
       &::before {
         content: "";
@@ -180,6 +196,10 @@
         h2 {
           position: relative;
 
+          @include lg{
+            font-size: clamp(40px, 5.55vw, 55px);
+          }
+
           &::before {
             position: absolute;
             content: "";
@@ -202,7 +222,8 @@
           font-family: $section-subtitle;
 
           @include md{
-            max-width: 420px;
+            max-width: clamp(340px, 54.75vw, 420px);
+            font-size: clamp(12px, 1.825vw, 14px);
           }
           @include xs{
             max-width: 300px;
@@ -256,6 +277,14 @@
     h3,
     h2 {
       color: #fff;
+    }
+
+    h2{
+
+      @include lg{
+        font-size: clamp(30px, 5.559vw, 55px);
+        white-space: normal;
+      }
     }
   }
   .container {
@@ -473,7 +502,7 @@
           font-size: clamp(25px, 2.813vw, 35px);
 
           @include lg{
-            font-size: clamp(35px, 4.541vw, 45px);
+            font-size: clamp(20px, 4.541vw, 45px);
           }
         }
         h4 {
@@ -544,6 +573,12 @@
       @include lg{
         height: 80px;
       }
+      @include md{
+        height: 60px;
+      }
+      @include sm{
+        height: 50px;
+      }
 
       h3 {
         font-family: $font-family-title;
@@ -565,7 +600,7 @@
         white-space: nowrap;
         text-transform: uppercase;
         @include lg{
-          font-size: clamp(18px, 2.541vw, 25px);
+          font-size: clamp(10px, 2.541vw, 25px);
         }
       }
     }
@@ -710,6 +745,10 @@
       position: relative;
       cursor: pointer;
       transition: 0.2s ease-in;
+
+      @include lg{
+        font-size: clamp(9px, 1.211vw, 12px);
+      }
 
       &:hover{
         color: $primary;
@@ -1012,6 +1051,16 @@
     padding: 80px 20px;
     background: rgba(255, 255, 255, 0.8);
 
+    @include lg{
+      padding: 80px 10px;
+    }
+    @include md{
+      padding: 70px 5px;
+    }
+    @include sm{
+      padding: 70px 0;
+    }
+
     .section-title {
       text-align: center;
 
@@ -1031,6 +1080,16 @@
     form {
       max-width: 800px;
       margin: 0 auto;
+
+      @include lg{
+        max-width: 600px;
+      }
+      @include md{
+        max-width: 480px;
+      }
+      @include sm{
+        max-width: 320px;
+      }
 
       .first-row {
         display: flex;
