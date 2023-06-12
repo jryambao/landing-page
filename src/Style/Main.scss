@@ -470,7 +470,7 @@
           margin-bottom: 5px;
           text-transform: uppercase;
           font-family: $font-family-title;
-          font-size: clamp(35px, 2.813vw, 40px);
+          font-size: clamp(25px, 2.813vw, 35px);
 
           @include lg{
             font-size: clamp(35px, 4.541vw, 45px);
