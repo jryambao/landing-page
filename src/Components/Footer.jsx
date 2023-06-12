@@ -174,7 +174,7 @@ const Footer = () => {
       <div className="hp-footer">
         <div className="container">
           <div className="footer-top">
-          <a href='#' className="footer-logo">
+          <a href='/' className="footer-logo">
             <img src="img/phil-logo.png" alt="Footer Logo" width="250" />
           </a>
           <div className="footer-sm">
@@ -189,7 +189,7 @@ const Footer = () => {
         <div className="footer-bot">
           <div className="footer-nav">
                 <ul>
-                  <li><a href="#">Home</a></li>
+                  <li><a href="/">Home</a></li>
                   <li><a href="#">About</a></li>
                   <li><a href="#">Listings</a></li>
                   <li><a href="#">Blog</a></li>

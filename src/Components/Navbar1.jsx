@@ -34,7 +34,7 @@ function Navbar() {
   return (
     <header className={isSticky}>
         <nav className="nav">
-      <a href="#" className="nav__brand">
+      <a href="/" className="nav__brand">
        <img src="img/phil-logo.png" alt="Header Logo" width="150" />
       </a>
       <ul className={active}>
@@ -44,7 +44,7 @@ function Navbar() {
       </a>
       </div>
         <li className="nav__item">
-          <a href="#" className="nav__link">
+          <a href="/" className="nav__link">
             Home
           </a>
         </li>
