@@ -379,6 +379,10 @@
       cursor: pointer;
       transition: 0.2s ease-in;
 
+      @include sm{
+        font-size: 10px;
+      }
+
       &:hover{
         color: $primary;
       }
@@ -680,6 +684,13 @@
 
       .ts-card {
         padding: 70px 80px;
+
+        @include md{
+          padding: 40px 50px;
+        }
+        @include sm{
+          padding: 30px 40px;
+        }
       }
 
       .ts-content {
