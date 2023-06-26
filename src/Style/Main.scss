@@ -396,6 +396,10 @@
       margin: 0 50px;
       position: relative;
 
+      @include sm{
+        margin: 0 30px;
+      }
+
       &:hover{
         background-color: $primary;
       }
