@@ -629,6 +629,14 @@
   padding: 70px 0;
   position: relative;
 
+  .section-title{
+    h2{
+      @include md{
+        font-size: clamp(40px, 5.5vw, 55px);
+      }
+    }
+  }
+
   &::before {
     background: url(../assets/ts-bg.jpg) center/cover no-repeat;
     width: 100%;
